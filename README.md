@@ -3,6 +3,10 @@ Header for easily making &amp; hooking syscalls in x86 processes using wow64
 
 ## Note
 This is only verified to work on a few machines, using different compilers or compiler settings could cause issues. The concept should be clear enough to make fixing these issues easy enough.
+### Features which will ( probably ) break this 
+- mov edi, edi dumb idiot Hotswappatch setting
+- Incremental linking
+- any other setting that does something stupid to functions
 
 ## Usage
 
