@@ -1,8 +1,5 @@
 <div align="center">
 
-<!-- ty gemini for this beautiful image -->
-<img src="syscatWOW.png" alt="Syscat logo" width="640">
-
 # Syscat
 
 *Portable, fast, & lightweight direct system service calls for Windows.*
@@ -20,9 +17,9 @@
 Syscat is a header-only C++ library aiming to solve the portability issues and runtime overhead associated with invoking direct system service calls on Windows by using static tables of system call numbers & Windows versions.
 
 ## Features
-- **Performant & lightweight** — significantly faster than parsing `ntdll`.
-- **Highly customizable** — specific versions & syscalls can be easily excluded/included.
-- **Works everywhere** — regardless of Windows version, altered syscall stubs, or altered LDR data.
+- **Performant & lightweight** significantly faster than parsing `ntdll`.
+- **Highly customizable** specific versions & syscalls can be easily excluded/included.
+- **Works everywhere** regardless of Windows version, altered syscall stubs, or altered LDR data.
 - Table data & code are only emitted for used syscalls.
 - Zero dependencies.
 - Zero runtime memory allocations.
