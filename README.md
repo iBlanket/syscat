@@ -14,16 +14,11 @@
 
 Syscat is a header-only C++ library aiming to solve the portability issues and runtime overhead associated with invoking direct system service calls on Windows by using static tables of system call numbers & Windows versions.
 
-## Features
-- Significantly faster than parsing `ntdll` & optimized for minimal increase in binary size.
-- Specific versions & syscalls can be easily excluded/included.
-- Works regardless of Windows version, altered syscall stubs, or altered LDR data.
-- Table data & code are only emitted for used syscalls.
-- Zero dependencies.
-- Zero runtime memory allocations.
-- Complete tables for `ntdll` across all major Windows versions ([j00ru's syscall tables](https://j00ru.vexillium.org/syscalls/nt/64/)).
-- Syscall tables are all smaller than `25 * 2` bytes.
-- Simple aliasing and usage of system calls.
+Unlike other tools, syscat utilizes optimized & minimal tables of system call numbers and OS build information to determine the correct syscall number to use at runtime across all major Windows versions.
+
+This allows syscat to remain function when syscall stubs are hooked or modified, when PE image headers are tampered with or stripped and/or when LDR data table entries are removed or altered.
+
+Syscat can also be configured for specific Windows versions, further increasing speed and reducing size.
 
 ## Support
 
@@ -33,19 +28,6 @@ Syscat is a header-only C++ library aiming to solve the portability issues and r
 | **clang** | ✅ | ✅ |
 
 > Wow64 calls are dispatched through `Wow64SystemServiceCall`
-
----
-
-## Approach
-
-Unlike other tools, syscat utilizes optimized & minimal tables of system call numbers and OS build information to determine the correct syscall number to use at runtime across all major Windows versions.
-
-### Syscat remains fully functional even when:
-- Syscall stubs are hooked or modified.
-- PE image headers are tampered with or stripped.
-- LDR data table entries are removed or altered.
-
-Syscat can also be configured for specific Windows versions, further increasing speed and reducing size.
 
 ## Usage
 
