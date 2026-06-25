@@ -1,5 +1,3 @@
-<div align="center">
-
 # Syscat
 
 *Portable, fast, & lightweight direct system service calls for Windows.*
@@ -15,6 +13,9 @@
 Syscat is a header-only C++ library aiming to solve the portability issues and runtime overhead associated with invoking direct system service calls on Windows by using static tables of system call numbers & Windows versions.
 
 Unlike other tools, syscat utilizes optimized & minimal tables of system call numbers and OS build information to determine the correct syscall number to use at runtime across all major Windows versions. This allows syscat to work even when syscall stubs are hooked or modified, when PE image headers are tampered with or stripped and/or when LDR data table entries are removed or altered.
+
+- [Github](https://github.com/iBlanket/syscat/)
+- [exploit.cat](https://git.exploit.cat/Joshua/syscat)
 
 ## Support
 
